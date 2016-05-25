@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Test_MFC", "Test_MFC\Test_MFC.vcxproj", "{A3E8CAD6-6AFA-4368-B8D2-F4F55CF2FFE8}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Test_WinCMD", "Test_WinCMD\Test_WinCMD.vcxproj", "{7681B15B-A946-4C28-AD33-D15625B4D1CF}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UTool_MFC", "UTool_MFC\UTool_MFC.vcxproj", "{47BDBE1B-2B07-4D0B-840B-56850EA3E566}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A3E8CAD6-6AFA-4368-B8D2-F4F55CF2FFE8}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A3E8CAD6-6AFA-4368-B8D2-F4F55CF2FFE8}.Debug|Win32.Build.0 = Debug|Win32
+		{A3E8CAD6-6AFA-4368-B8D2-F4F55CF2FFE8}.Release|Win32.ActiveCfg = Release|Win32
+		{A3E8CAD6-6AFA-4368-B8D2-F4F55CF2FFE8}.Release|Win32.Build.0 = Release|Win32
+		{7681B15B-A946-4C28-AD33-D15625B4D1CF}.Debug|Win32.ActiveCfg = Debug|Win32
+		{7681B15B-A946-4C28-AD33-D15625B4D1CF}.Debug|Win32.Build.0 = Debug|Win32
+		{7681B15B-A946-4C28-AD33-D15625B4D1CF}.Release|Win32.ActiveCfg = Release|Win32
+		{7681B15B-A946-4C28-AD33-D15625B4D1CF}.Release|Win32.Build.0 = Release|Win32
+		{47BDBE1B-2B07-4D0B-840B-56850EA3E566}.Debug|Win32.ActiveCfg = Debug|Win32
+		{47BDBE1B-2B07-4D0B-840B-56850EA3E566}.Debug|Win32.Build.0 = Debug|Win32
+		{47BDBE1B-2B07-4D0B-840B-56850EA3E566}.Release|Win32.ActiveCfg = Release|Win32
+		{47BDBE1B-2B07-4D0B-840B-56850EA3E566}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
