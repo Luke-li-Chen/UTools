@@ -37,3 +37,5 @@
 #endif // _AFX_NO_AFXCMN_SUPPORT
 
 
+// 在此处引用程序需要的其他头文件
+#include <string>

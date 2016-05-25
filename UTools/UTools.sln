@@ -1,9 +1,17 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Test_MFC", "Test_MFC\Test_MFC.vcxproj", "{A3E8CAD6-6AFA-4368-B8D2-F4F55CF2FFE8}"
+	ProjectSection(ProjectDependencies) = postProject
+		{47BDBE1B-2B07-4D0B-840B-56850EA3E566} = {47BDBE1B-2B07-4D0B-840B-56850EA3E566}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Test_WinCMD", "Test_WinCMD\Test_WinCMD.vcxproj", "{7681B15B-A946-4C28-AD33-D15625B4D1CF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{47BDBE1B-2B07-4D0B-840B-56850EA3E566} = {47BDBE1B-2B07-4D0B-840B-56850EA3E566}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UTool_MFC", "UTool_MFC\UTool_MFC.vcxproj", "{47BDBE1B-2B07-4D0B-840B-56850EA3E566}"
 EndProject
