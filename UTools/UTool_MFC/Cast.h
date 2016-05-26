@@ -19,7 +19,12 @@ namespace UTools
         // string -> char[]
         static char* string2NewPchar(const string& str);
 
+#ifdef __AFX_H__
+#pragma message("Is MFC Program")
+
         static CString add(CString src);
+
+#endif
     };
 }
 
