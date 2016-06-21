@@ -12,10 +12,12 @@
 #endif
 
 #include "../UTool_MFC/Cast.h"
+#include "../UTool_MFC/IniFile.h"
 
 #pragma comment(lib, "../debug/UTool_MFC.lib")
 
 using UTools::Cast;
+using UTools::IniFile;
 using std::string;
 
 // 用于应用程序“关于”菜单项的 CAboutDlg 对话框
@@ -166,11 +168,19 @@ void CTest_MFCDlg::OnBnClickedButtonTest()
 {
     // TODO: 在此添加控件通知处理程序代码
 
-    string a = Cast::int2string(2);
+    //string a = Cast::int2string(2);
 
-    CString cs = "Hello";
-    //CString cs2;
-    m_csTest = Cast::add(cs);
-    UpdateData(FALSE);
+    //CString cs = "Hello";
+    ////CString cs2;
+    //m_csTest = Cast::add(cs);
+    //UpdateData(FALSE);
     //AfxMessageBox(cs2);
+
+    IniFile f;
+
+    char s[5];
+    f.GetPchar(nullptr, nullptr, 100000, s);
+
+
+
 }

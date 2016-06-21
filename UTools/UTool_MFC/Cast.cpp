@@ -16,7 +16,7 @@ Cast::~Cast()
 string Cast::int2string(int Value, int Radix)
 {
     char tmp[12] = { 0 };
-    itoa(Value, tmp, Radix);
+    _itoa(Value, tmp, Radix);
     string rtn(tmp);
 
     return rtn;
@@ -33,7 +33,7 @@ inline string Cast::int2string(int Value)
 
 char* Cast::string2NewPchar(const string& str)
 {
-    int size = str.size() + 1;
+    size_t size = str.size() + 1;
     char* p = new char[size];
     //strcpy(p, str.c_str());
     //char p[5];
@@ -45,5 +45,5 @@ char* Cast::string2NewPchar(const string& str)
 
 CString Cast::add(CString src)
 {
-    return src + _T("2333");
+    return src + _T("23336666");
 }
