@@ -11,6 +11,14 @@
 #define new DEBUG_NEW
 #endif
 
+#include "../UTool_MFC/Cast.h"
+#include "../UTool_MFC/IniFile.h"
+
+#pragma comment(lib, "../debug/UTool_MFC.lib")
+
+using namespace UTools::Cast;
+using UTools::IniFile;
+using std::string;
 
 // 用于应用程序“关于”菜单项的 CAboutDlg 对话框
 
@@ -50,6 +58,7 @@ END_MESSAGE_MAP()
 
 CTest_MFCDlg::CTest_MFCDlg(CWnd* pParent /*=NULL*/)
     : CDialogEx(CTest_MFCDlg::IDD, pParent)
+    , m_csTest(_T(""))
 {
     m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
 }
@@ -57,12 +66,14 @@ CTest_MFCDlg::CTest_MFCDlg(CWnd* pParent /*=NULL*/)
 void CTest_MFCDlg::DoDataExchange(CDataExchange* pDX)
 {
     CDialogEx::DoDataExchange(pDX);
+    DDX_Text(pDX, IDC_EDIT_TEST, m_csTest);
 }
 
 BEGIN_MESSAGE_MAP(CTest_MFCDlg, CDialogEx)
     ON_WM_SYSCOMMAND()
     ON_WM_PAINT()
     ON_WM_QUERYDRAGICON()
+    ON_BN_CLICKED(IDC_BUTTON_TEST, &CTest_MFCDlg::OnBnClickedButtonTest)
 END_MESSAGE_MAP()
 
 
@@ -151,3 +162,29 @@ HCURSOR CTest_MFCDlg::OnQueryDragIcon()
     return static_cast<HCURSOR>(m_hIcon);
 }
 
+
+
+void CTest_MFCDlg::OnBnClickedButtonTest()
+{
+    // TODO: 在此添加控件通知处理程序代码
+
+    //string a = Cast::int2string(2);
+
+    //CString cs = "Hello";
+    ////CString cs2;
+    //m_csTest = Cast::add(cs);
+    //UpdateData(FALSE);
+    //AfxMessageBox(cs2);
+
+    /*
+    IniFile f;
+
+    char s[5];
+    f.GetPchar(nullptr, nullptr, 100000, s);
+    */
+
+    CString s("Hello!");
+    char sz[50];
+    CStringAToCharArray(s, sz, 3);
+    TRACE("%s\n", sz);
+}
