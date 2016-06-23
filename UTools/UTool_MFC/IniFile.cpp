@@ -6,7 +6,7 @@
 using std::string;
 using std::exception;
 using UTools::IniFile;
-using UTools::Cast;
+using namespace UTools::Cast;
 
 IniFile::IniFile()
 {
@@ -50,7 +50,7 @@ unsigned int IniFile::GetInt(string app, string key, unsigned int defaultVal = U
     if (rtn == defaultVal)
     {
         string msg = "读取到错误的值，为";
-        msg += Cast::int2string(rtn, 10);
+        msg += Cast::IntToString(rtn, 10);
         msg += '\n';
         exception e(msg.c_str());
         throw e;
@@ -79,7 +79,7 @@ bool IniFile::GetBool(const char* app, const char* key)
     else
     {
         string msg = "读取到错误的值，为";
-        msg += Cast::int2string(rtn, 10);
+        msg += Cast::IntToString(rtn, 10);
         msg += '\n';
         exception e(msg.c_str());
         throw e;

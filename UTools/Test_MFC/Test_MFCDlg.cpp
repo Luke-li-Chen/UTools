@@ -16,7 +16,7 @@
 
 #pragma comment(lib, "../debug/UTool_MFC.lib")
 
-using UTools::Cast;
+using namespace UTools::Cast;
 using UTools::IniFile;
 using std::string;
 
@@ -176,11 +176,15 @@ void CTest_MFCDlg::OnBnClickedButtonTest()
     //UpdateData(FALSE);
     //AfxMessageBox(cs2);
 
+    /*
     IniFile f;
 
     char s[5];
     f.GetPchar(nullptr, nullptr, 100000, s);
+    */
 
-
-
+    CString s("Hello!");
+    char sz[50];
+    CStringAToCharArray(s, sz, 3);
+    TRACE("%s\n", sz);
 }

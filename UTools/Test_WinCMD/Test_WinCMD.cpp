@@ -7,17 +7,17 @@
 
 #pragma comment(lib, "../debug/UTool_MFC.lib")
 
-using UTools::Cast;
+using namespace UTools::Cast;
 using std::string;
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-    string str = Cast::int2string(16);
+    string str = IntToString(16);
     str += "abc";
     printf("%s\n", str.c_str());
 
 
-    char* p = Cast::string2NewPchar(str);
+    char* p = StringToNewCharArray(str);
     printf("%s\n", p);
     delete[] p;
 

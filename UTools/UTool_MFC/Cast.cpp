@@ -1,19 +1,11 @@
 #include "StdAfx.h"
 #include "Cast.h"
 
-using UTools::Cast;
+using namespace UTools;
 using std::string;
 
-Cast::Cast()
-{
-}
 
-
-Cast::~Cast()
-{
-}
-
-string Cast::int2string(int Value, int Radix)
+string Cast::IntToString(int Value, int Radix)
 {
     char tmp[12] = { 0 };
     _itoa(Value, tmp, Radix);
@@ -22,7 +14,7 @@ string Cast::int2string(int Value, int Radix)
     return rtn;
 }
 
-inline string Cast::int2string(int Value)
+string Cast::IntToString(int Value)
 {
     using std::to_string;
 
@@ -31,19 +23,59 @@ inline string Cast::int2string(int Value)
     return rtn;
 }
 
-char* Cast::string2NewPchar(const string& str)
+char* Cast::StringToNewCharArray(const string& Str)
 {
-    size_t size = str.size() + 1;
+    size_t size = Str.size() + 1;
     char* p = new char[size];
-    //strcpy(p, str.c_str());
-    //char p[5];
-    //strcpy_s(p, str.c_str());
-    strncpy(p, str.c_str(), size);
+    strncpy(p, Str.c_str(), size);
 
     return p;
 }
 
-CString Cast::add(CString src)
+char* Cast::CStringAToCharArray(const CStringA& Src, char* Dst, size_t Count)
 {
-    return src + _T("23336666");
+    strncpy(Dst, (LPSTR)(LPCTSTR)Src, Count);
+
+    return Dst;
+}
+
+float Cast::ByteArrayToFloat(const byte Src[4])
+{
+    float rst;
+    memcpy(&rst, Src, 4);
+
+    return rst;
+}
+
+byte* Cast::FloatToByteArray(float Src, byte Dst[4])
+{
+    memcpy(Dst, &Src, 4);
+    return Dst;
+}
+
+float Cast::CByteArrayToFloat(const CByteArray& Src)
+{
+    byte b[4];
+    for (int i = 0; i < 4; i++)
+    {
+        b[i] = Src.GetAt(i);
+    }
+
+    float rst;
+    memcpy(&rst, b, 4);
+
+    return rst;
+}
+
+CByteArray& Cast::FloatToCByteArray(float Src, CByteArray& Dst)
+{
+    byte b[4];
+    memcpy(b, &Src, 4);
+
+    for (int i = 0; i < 4; i++)
+    {
+        Dst.SetAt(i, b[i]);
+    }
+
+    return Dst;
 }
