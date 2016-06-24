@@ -36,6 +36,9 @@
     <ClCompile Include="IniFile.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="FloatingPoint.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="UTool_MFC.h">
@@ -54,6 +57,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="IniFile.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="FloatingPoint.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

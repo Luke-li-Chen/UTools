@@ -15,3 +15,8 @@
 // TODO: 在此处引用程序需要的其他头文件
 #include <stdlib.h>
 #include <string>
+#include <time.h>
+#include <math.h>
+#include <iostream>
+using std::cout;
+using std::endl;
