@@ -1,10 +1,11 @@
 #pragma once
+#define DllExport   __declspec( dllexport )
 
 namespace UTools
 {
     using std::string;
 
-    class __declspec(dllexport) IniFile
+    class DllExport IniFile
     {
     public:
         IniFile();
