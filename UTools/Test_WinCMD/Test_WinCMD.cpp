@@ -7,6 +7,7 @@
 
 #include "../UTool_MFC/Cast.h"
 #include "../UTool_MFC/FloatingPoint.h"
+#include "../UTool_MFC/Logger.h"
 
 #ifdef _DEBUG
 #pragma comment(lib, "../debug/UTool_MFC.lib")
@@ -67,19 +68,26 @@ int _tmain(int argc, _TCHAR* argv[])
 
     //val = log((double)-1);  // -1.#IND00
 
-    int a = 0;
-    int b = 0;
-    scanf("%d", &b);
+    //int a = 0;
+    //int b = 0;
+    //scanf("%d", &b);
 
-    val = 0 / b;
+    //val = 0 / b;
 
-    printf("%f\n", val);
-    cout << "val = " << val << endl;
+    //printf("%f\n", val);
+    //cout << "val = " << val << endl;
 
 
 
-    printf("%d\n", _isnan(val));
-    printf("%d\n", _finite(val));
+    //printf("%d\n", _isnan(val));
+    //printf("%d\n", _finite(val));
+
+
+    //LogFile log;
+    //log.print("%d\n%s\n", 12, "asfsadf");
+    Logger* log = new LogFile;
+
+    log->print("hhhhhh");
 
     system("pause");
     return 0;
