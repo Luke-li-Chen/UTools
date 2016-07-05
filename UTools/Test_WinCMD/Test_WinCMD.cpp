@@ -8,11 +8,24 @@
 #include "../UTool_MFC/Cast.h"
 #include "../UTool_MFC/FloatingPoint.h"
 #include "../UTool_MFC/Logger.h"
+#include "../UTool_MFC/File.h"
 
+
+
+#ifdef _WIN64
+#pragma message("Is 64bit Program")
+#ifdef _DEBUG
+#pragma comment(lib, "../x64/debug/UTool_MFC.lib")
+#else
+#pragma comment(lib, "../x64/release/UTool_MFC.lib")
+#endif
+#else
+#pragma message("Is 32bit Program")
 #ifdef _DEBUG
 #pragma comment(lib, "../debug/UTool_MFC.lib")
 #else
 #pragma comment(lib, "../release/UTool_MFC.lib")
+#endif
 #endif
 
 #include <math.h>
@@ -22,6 +35,10 @@ using std::numeric_limits;
 
 using namespace UTools::Cast;
 using namespace UTools::FloatingPoint;
+using namespace UTools::Log;
+
+using UTools::IO::File;
+
 using std::string;
 
 int _tmain(int argc, _TCHAR* argv[])
@@ -85,9 +102,15 @@ int _tmain(int argc, _TCHAR* argv[])
 
     //LogFile log;
     //log.print("%d\n%s\n", 12, "asfsadf");
-    Logger* log = new LogFile;
+    //Logger* log = new LogFile;
+    //Logger* log = new LogTrace;
 
-    log->print("hhhhhh");
+    //log->print("hhhhhh");
+
+    File f;
+    __int64 a = f.GetSize("E:\\6A02\\test_Board1_channel0_2016_06_17_140429---------------473--------¾ùÕýÈ·.raw");
+
+    printf("%lld\n", a);
 
     system("pause");
     return 0;
