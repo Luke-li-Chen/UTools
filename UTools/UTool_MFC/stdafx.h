@@ -41,8 +41,9 @@
 #include <string>
 #include <limits>
 #include <time.h>
+#include <vector>
 
 //#include <math.h>
 //#include <float.h>
-
+#include <io.h>
 

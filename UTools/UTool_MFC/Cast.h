@@ -32,11 +32,26 @@ namespace UTools
         // CString -> char[]
         DllExport char* CStringAToCharArray(const CStringA& csSrc, char* szDst, size_t count);
 
+        
+        // CString -> string
+        DllExport string& CStringToString(
+            const CString& src,
+            string& dest
+        );
+
+        // CString -> string
+        DllExport string& CStringToNewString(
+            const CString& src
+        );
+
+
         // CByteArray -> float
         DllExport float CByteArrayToFloat(const CByteArray& Src);
 
         // float -> CByteArray
         DllExport CByteArray& FloatToCByteArray(float Src, CByteArray& Dst);
+
+
 #endif
     };
 }

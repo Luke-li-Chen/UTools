@@ -14,7 +14,22 @@
 #include "../UTool_MFC/Cast.h"
 #include "../UTool_MFC/IniFile.h"
 
+//#pragma comment(lib, "../debug/UTool_MFC.lib")
+#ifdef _WIN64
+#pragma message("Is 64bit Program")
+#ifdef _DEBUG
+#pragma comment(lib, "../x64/debug/UTool_MFC.lib")
+#else
+#pragma comment(lib, "../x64/release/UTool_MFC.lib")
+#endif
+#else
+#pragma message("Is 32bit Program")
+#ifdef _DEBUG
 #pragma comment(lib, "../debug/UTool_MFC.lib")
+#else
+#pragma comment(lib, "../release/UTool_MFC.lib")
+#endif
+#endif
 
 using namespace UTools::Cast;
 using UTools::IniFile;
@@ -187,4 +202,5 @@ void CTest_MFCDlg::OnBnClickedButtonTest()
     char sz[50];
     CStringAToCharArray(s, sz, 3);
     TRACE("%s\n", sz);
+
 }

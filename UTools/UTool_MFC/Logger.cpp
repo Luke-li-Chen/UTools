@@ -2,6 +2,7 @@
 #include "Logger.h"
 
 using std::string;
+using namespace UTools::Log;
 
 Logger::Logger()
 {
@@ -38,6 +39,7 @@ void LogTrace::print(const char * Format, ...)
 
 
 LogFile::LogFile()
+    :m_fp(nullptr)
 {
     time_t t = time(nullptr);
     char tmp[64];
@@ -49,6 +51,7 @@ LogFile::LogFile()
 }
 
 LogFile::LogFile(string _FilePath)
+    :m_fp(nullptr)
 {
 }
 
