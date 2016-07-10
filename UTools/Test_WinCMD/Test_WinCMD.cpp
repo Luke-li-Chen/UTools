@@ -40,79 +40,84 @@ using namespace UTools::Log;
 using UTools::IO::File;
 
 using std::string;
+#if 0
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-    clock_t tStart, tEnd;
-    double val, val2;
+	clock_t tStart, tEnd;
+	double val, val2;
 
-    /*
-    tStart = clock();
+	/*
+	tStart = clock();
 
-    for (int i = 0; i < 100000000; i++)
-    {
-        val = DoubleNaN_STL();
-    }
+	for (int i = 0; i < 100000000; i++)
+	{
+	val = DoubleNaN_STL();
+	}
 
-    tEnd = clock();
+	tEnd = clock();
 
-    cout << "val = " << val << endl;
-    printf("%f\n", val);
-    cout << "STL time = " << (tEnd - tStart) << " ms." << endl;
+	cout << "val = " << val << endl;
+	printf("%f\n", val);
+	cout << "STL time = " << (tEnd - tStart) << " ms." << endl;
 
-    unsigned long long u = *(unsigned long long*)(&val);
-    printf("%llx\n", u);
+	unsigned long long u = *(unsigned long long*)(&val);
+	printf("%llx\n", u);
 
-    tStart = clock();
+	tStart = clock();
 
-    for (int i = 0; i < 100000000; i++)
-    {
-        val2 = DoubleNaN();
-    }
+	for (int i = 0; i < 100000000; i++)
+	{
+	val2 = DoubleNaN();
+	}
 
-    tEnd = clock();
-
-
-    cout << "val = " << val2 << endl;
-    printf("%f\n", val2);
-    cout << "SELF time = " << (tEnd - tStart) << " ms." << endl;
-
-    cout << "memcmp = " << memcmp(&val, &val2, 8) << endl;
-    */
-
-    //val = DoubleNZero();
-    //val = numeric_limits<double>::signaling_NaN();
-
-    //val = log((double)-1);  // -1.#IND00
-
-    //int a = 0;
-    //int b = 0;
-    //scanf("%d", &b);
-
-    //val = 0 / b;
-
-    //printf("%f\n", val);
-    //cout << "val = " << val << endl;
+	tEnd = clock();
 
 
+	cout << "val = " << val2 << endl;
+	printf("%f\n", val2);
+	cout << "SELF time = " << (tEnd - tStart) << " ms." << endl;
 
-    //printf("%d\n", _isnan(val));
-    //printf("%d\n", _finite(val));
+	cout << "memcmp = " << memcmp(&val, &val2, 8) << endl;
+	*/
+
+	//val = DoubleNZero();
+	//val = numeric_limits<double>::signaling_NaN();
+
+	//val = log((double)-1);  // -1.#IND00
+
+	//int a = 0;
+	//int b = 0;
+	//scanf("%d", &b);
+
+	//val = 0 / b;
+
+	//printf("%f\n", val);
+	//cout << "val = " << val << endl;
 
 
-    //LogFile log;
-    //log.print("%d\n%s\n", 12, "asfsadf");
-    //Logger* log = new LogFile;
-    //Logger* log = new LogTrace;
 
-    //log->print("hhhhhh");
+	//printf("%d\n", _isnan(val));
+	//printf("%d\n", _finite(val));
 
-    File f;
-    __int64 a = f.GetSize("E:\\6A02\\test_Board1_channel0_2016_06_17_140429---------------473--------均正确.raw");
 
-    printf("%lld\n", a);
+	//LogFile log;
+	//log.print("%d\n%s\n", 12, "asfsadf");
+	//Logger* log = new LogFile;
+	//Logger* log = new LogTrace;
 
-    system("pause");
-    return 0;
+	//log->print("hhhhhh");
+
+	File f;
+	__int64 a = f.GetSize("E:\\6A02\\test_Board1_channel0_2016_06_17_140429---------------473--------均正确.raw");
+
+	printf("%lld\n", a);
+
+	system("pause");
+	return 0;
 }
+
+#endif
+
+
 
