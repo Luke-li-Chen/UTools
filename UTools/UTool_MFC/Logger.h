@@ -6,13 +6,22 @@ namespace UTools
 {
     namespace Log
     {
+        enum Level
+        {
+            Info,
+            Warning,
+            Error,
+            Info_NoDis,
+            Warning_NoDis,
+            Error_NoDis
+        };
         class DllExport Logger
         {
         public:
             Logger();
             virtual ~Logger();
 
-            virtual void print(const char * _Format, ...) = 0;
+            virtual void print(Level _Level, const char * _Format, ...) = 0;
         };
 
 
@@ -22,7 +31,7 @@ namespace UTools
             LogTrace();
             ~LogTrace();
 
-            virtual void print(const char * _Format, ...);
+            virtual void print(Level _Level, const char * _Format, ...);
         };
 
         class DllExport LogFile : public Logger
@@ -32,7 +41,7 @@ namespace UTools
             LogFile(std::string _FilePath);
             ~LogFile();
 
-            virtual void print(const char * _Format, ...);
+            virtual void print(Level _Level, const char * _Format, ...);
 
         protected:
             FILE* m_fp;

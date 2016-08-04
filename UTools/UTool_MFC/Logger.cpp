@@ -22,15 +22,30 @@ LogTrace::~LogTrace()
 {
 }
 
-void LogTrace::print(const char * Format, ...)
+void LogTrace::print(Level _Level, const char * _Format, ...)
 {
     const size_t bufSize = 1024 * 32;
     va_list args;
 
     char buf[bufSize] = { 0 };
-    va_start(args, Format);
-    _vsnprintf(buf, bufSize, Format, args);
+    va_start(args, _Format);
+    _vsnprintf(buf, bufSize, _Format, args);
     va_end(args);
+
+    switch (_Level)
+    {
+    case UTools::Log::Info:
+        OutputDebugString("Info: ");
+        break;
+    case UTools::Log::Warning:
+        OutputDebugString("Warning: ");
+        break;
+    case UTools::Log::Error:
+        OutputDebugString("Error: ");
+        break;
+    default:
+        break;
+    }
 
     OutputDebugString(buf);
 }
@@ -63,7 +78,7 @@ LogFile::~LogFile()
     }
 }
 
-void LogFile::print(const char * _Format, ...)
+void LogFile::print(Level _Level, const char * _Format, ...)
 {
 }
 

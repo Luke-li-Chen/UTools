@@ -28,3 +28,22 @@ __int64 UTools::IO::File::GetSize(const char* FilePath)
 
     return size;
 }
+
+bool UTools::IO::File::Exist(const char * FilePath)
+{
+    if ((_access(FilePath, 0)) != -1)
+    {
+        return true;
+    }
+
+    return false;
+}
+
+bool UTools::IO::File::Delete(const char * FilePath)
+{
+    if (remove(FilePath) == 0)
+    {
+        return true;
+    }
+    return false;
+}

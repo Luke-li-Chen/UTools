@@ -12,7 +12,9 @@ namespace UTools
             File();
             ~File();
 
-            __int64 GetSize(const char* FilePath);
+            static __int64 GetSize(const char* FilePath);
+            static bool Exist(const char* FilePath);
+            static bool Delete(const char* FilePath);
         };
     }
 }
