@@ -54,7 +54,7 @@ void LogTrace::print(Level _Level, const char * _Format, ...)
 
 
 LogFile::LogFile()
-    :m_fp(nullptr)
+    : m_fp(nullptr)
 {
     time_t t = time(nullptr);
     char tmp[64];
@@ -66,7 +66,7 @@ LogFile::LogFile()
 }
 
 LogFile::LogFile(string _FilePath)
-    :m_fp(nullptr)
+    : m_fp(nullptr)
 {
 }
 
@@ -82,3 +82,30 @@ void LogFile::print(Level _Level, const char * _Format, ...)
 {
 }
 
+UTools::Log::LogCMD::LogCMD()
+{
+}
+
+UTools::Log::LogCMD::~LogCMD()
+{
+}
+
+void UTools::Log::LogCMD::print(Level _Level, const char * _Format, ...)
+{
+}
+
+void UTools::Log::LogCMD::printPercent(UINT64 current, UINT64 total, float step)
+{
+    static float threshold = 0.0;
+    float percent;
+
+
+    percent = (float)current / total;
+    percent *= 100;
+
+    if (percent >= threshold)
+    {
+        printf("%f%%\n", percent);
+        threshold += step;
+    }
+}

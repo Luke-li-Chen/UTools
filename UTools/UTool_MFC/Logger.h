@@ -46,5 +46,15 @@ namespace UTools
         protected:
             FILE* m_fp;
         };
+
+        class DllExport LogCMD : public Logger
+        {
+        public:
+            LogCMD();
+            ~LogCMD();
+
+            virtual void print(Level _Level, const char * _Format, ...);
+            void printPercent(UINT64 current, UINT64 total, float step);
+        };
     }
 }
