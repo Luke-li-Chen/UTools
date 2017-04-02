@@ -120,4 +120,14 @@ int _tmain(int argc, _TCHAR* argv[])
 #endif
 
 
+int main()
+{
+    time_t t = time(nullptr);
+    tm* timeNow = localtime(&t);
+
+    printf("%d\n", timeNow->tm_hour);
+
+    system("pause");
+    return 0;
+}
 

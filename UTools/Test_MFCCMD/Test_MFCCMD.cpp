@@ -99,7 +99,7 @@ UINT Therad2(LPVOID pParam)
         CMyLock lock1(g_Lock);
         g_I--;
         v.push_back(g_I);
-        printf("%d\n", v.size());
+        printf("%lld\n", v.size());
         //Sleep(1);
     };
 }
